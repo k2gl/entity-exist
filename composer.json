@@ -1,7 +1,7 @@
 {
     "name": "k2gl/entity-exist",
     "description": "Checks if there is at least one row with the required field in the database, for example, a row with the same identifier",
-    "type": "composer-plugin",
+    "type": "library",
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
