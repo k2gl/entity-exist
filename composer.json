@@ -24,7 +24,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "K2gl\\Component\\Validator\\Constraint\\EntityExist\\Test\\": "src/"
+            "K2gl\\Component\\Validator\\Constraint\\EntityExist\\Test\\": "tests/"
         }
     },
     "authors": [
