@@ -8,7 +8,7 @@ use Attribute;
 use Symfony\Component\Validator\Attribute\HasNamedArguments;
 use Symfony\Component\Validator\Constraint;
 
-#[Attribute(Attribute::TARGET_PROPERTY)]
+#[Attribute(Attribute::TARGET_PROPERTY | Attribute::IS_REPEATABLE)]
 final class AssertEntityNotExist extends Constraint
 {
     public const EXIST = 'f7b817e0-4536-46e2-b3dd-2fdbbbdb9031';
