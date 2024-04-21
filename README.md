@@ -1,5 +1,7 @@
 # Assert entity exist or not using Symfony constraints and Doctrine.
 
+[![GitHub Actions](https://github.com/k2gl/entity-exist/workflows/CI/badge.svg)](https://github.com/k2gl/entity-exist/actions?workflow=CI)
+
 ## Installation
 
 You can add this library as a local, per-project dependency to your project using [Composer](https://getcomposer.org/):
