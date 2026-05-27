@@ -13,10 +13,4 @@
       <directory>src</directory>
     </include>
   </source>
-  <extensions>
-    <bootstrap class="Symfony\Bridge\PhpUnit\SymfonyExtension"/>
-  </extensions>
-  <php>
-    <env name="SYMFONY_DEPRECATIONS_HELPER" value="max[self]=0"/>
-  </php>
 </phpunit>
