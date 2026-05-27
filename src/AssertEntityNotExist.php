@@ -17,14 +17,17 @@ final class AssertEntityNotExist extends Constraint
         self::EXIST => 'EXIST',
     ];
 
+    /**
+     * @param class-string $entity
+     */
     #[HasNamedArguments]
     public function __construct(
         public string $entity,
         public string $property = 'id',
         public string $message = 'Entity "%entity%" with property "%property%": "%value%" already exist.',
-        array $groups = null,
-        mixed $payload = null
+        ?array $groups = null,
+        mixed $payload = null,
     ) {
-        parent::__construct([], $groups, $payload);
+        parent::__construct(null, $groups, $payload);
     }
 }

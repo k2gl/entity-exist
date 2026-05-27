@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace K2gl\Component\Validator\Constraint\EntityExist;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Constraint;
+use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 final class AssertEntityNotExistValidator extends ConstraintValidator

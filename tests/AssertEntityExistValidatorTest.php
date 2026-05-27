@@ -51,7 +51,7 @@ class AssertEntityExistValidatorTest extends TestCase
     public function testValidateValidEntity(): void
     {
         // arrange
-        $user = new class{};
+        $user = new class () {};
         $assertEntityExist = new AssertEntityExist(entity: 'App\Entity\User');
 
         // assert
@@ -77,7 +77,7 @@ class AssertEntityExistValidatorTest extends TestCase
     public function testValidateSkipsIfValueEmptyOrNull(?string $value): void
     {
         // arrange
-        $user = new class{};
+        $user = new class () {};
         $assertEntityExist = new AssertEntityExist(entity: 'App\Entity\User');
 
         // assert
@@ -102,7 +102,7 @@ class AssertEntityExistValidatorTest extends TestCase
     public function testValidateValidEntityWithCustomProperty(): void
     {
         // arrange
-        $user = new class{};
+        $user = new class () {};
         $assertEntityExist = new AssertEntityExist(entity: 'App\Entity\User', property: 'uuid');
 
         // assert

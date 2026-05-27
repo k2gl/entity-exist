@@ -2,6 +2,12 @@
 
 [![GitHub Actions](https://github.com/k2gl/entity-exist/workflows/CI/badge.svg)](https://github.com/k2gl/entity-exist/actions?workflow=CI)
 
+## Requirements
+
+- PHP 8.1+
+- Symfony 6.1, 7.x or 8.x (`symfony/validator`, `symfony/dependency-injection`)
+- Doctrine ORM 2.13+ or 3.x
+
 ## Installation
 
 You can add this library as a local, per-project dependency to your project using [Composer](https://getcomposer.org/):

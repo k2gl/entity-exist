@@ -10,7 +10,6 @@ use Generator;
 use K2gl\Component\Validator\Constraint\EntityExist\AssertEntityNotExist;
 use K2gl\Component\Validator\Constraint\EntityExist\AssertEntityNotExistValidator;
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockBuilder;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\NotNull;
@@ -125,7 +124,7 @@ class AssertEntityNotExistValidatorTest extends TestCase
     public function testValidateInvalidEntity(): void
     {
         // arrange
-        $user = new class{};
+        $user = new class () {};
         $assertEntityNotExist = new AssertEntityNotExist(entity: 'App\Entity\User');
 
         // assert
