@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.14.0
+
+- Add `ViolationCode` — a small reference class re-exposing the violation codes
+  declared by `AssertEntityExist` and `AssertEntityNotExist` under neutral names
+  (`NOT_EXIST`, `ALREADY_EXIST`), suitable for error handling and tests.
+  Fully backward compatible; no constants removed or renamed.
+
 ## 1.13.0
 
 - Add support for Symfony 8 (`symfony/validator` and `symfony/dependency-injection` `^8.0`).

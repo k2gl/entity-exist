@@ -77,6 +77,34 @@ readonly class TransferUserToOtherUnitOrder
 }
 ```
 
+## Violation codes
+
+Each constraint declares the violation code it emits as a UUID constant on its
+own class (`AssertEntityExist::NOT_EXIST`, `AssertEntityNotExist::EXIST`).
+Reading those at the call site can be awkward — especially
+`AssertEntityNotExist::EXIST`, where the class name and the constant negate
+each other.
+
+For nicer reading in error handling and tests, the same codes are also exposed
+under neutral names on `ViolationCode`:
+
+```php
+use K2gl\Component\Validator\Constraint\EntityExist\ViolationCode;
+
+foreach ($validator->validate($dto) as $violation) {
+    if ($violation->getCode() === ViolationCode::ALREADY_EXIST) {
+        // handle "entity already exists" case
+    }
+
+    if ($violation->getCode() === ViolationCode::NOT_EXIST) {
+        // handle "entity not found" case
+    }
+}
+```
+
+`ViolationCode` constants are plain strings that reference the constraint
+constants — no duplication, no separate source of truth.
+
 ## Pull requests are always welcome
 [Collaborate with pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
 
