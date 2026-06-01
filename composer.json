@@ -16,7 +16,7 @@
         "symfony/phpunit-bridge": "^6.1|^7.0|^8.0",
         "symfony/var-dumper": "^6.1|^7.0|^8.0",
         "phpstan/phpstan": "^2.1",
-        "laravel/pint": "^1.29",
+        "laravel/pint": "~1.20.0",
         "rector/rector": "^2.0",
         "roave/security-advisories": "dev-latest",
         "k2gl/phpunit-fluent-assertions": "^12"
