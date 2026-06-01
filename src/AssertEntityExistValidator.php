@@ -11,13 +11,11 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 final class AssertEntityExistValidator extends ConstraintValidator
 {
-    public function __construct(private readonly EntityManagerInterface $entityManager)
-    {
-    }
+    public function __construct(private readonly EntityManagerInterface $entityManager) {}
 
     public function validate(mixed $value, Constraint $constraint): void
     {
-        if (!$constraint instanceof AssertEntityExist) {
+        if (! $constraint instanceof AssertEntityExist) {
             throw new UnexpectedTypeException($constraint, expectedType: AssertEntityExist::class);
         }
 

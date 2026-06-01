@@ -45,7 +45,7 @@ class AssertEntityNotExistValidatorTest extends TestCase
         $this->expectException(UnexpectedTypeException::class);
 
         // act
-        $this->assertEntityNotExistValidator->validate('foo', new NotNull());
+        $this->assertEntityNotExistValidator->validate('foo', new NotNull);
     }
 
     public function testValidateValidEntity(): void

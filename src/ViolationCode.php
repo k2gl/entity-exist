@@ -26,7 +26,5 @@ final class ViolationCode
     /** Entity required to be absent already exists. */
     public const ALREADY_EXIST = AssertEntityNotExist::EXIST;
 
-    private function __construct()
-    {
-    }
+    private function __construct() {}
 }

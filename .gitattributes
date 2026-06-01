@@ -3,3 +3,4 @@ phpunit.xml export-ignore
 phpstan.neon export-ignore
 rector.php export-ignore
 tests/ export-ignore
+pint.json export-ignore

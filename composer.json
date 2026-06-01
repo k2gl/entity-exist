@@ -16,7 +16,7 @@
         "symfony/phpunit-bridge": "^6.1|^7.0|^8.0",
         "symfony/var-dumper": "^6.1|^7.0|^8.0",
         "phpstan/phpstan": "^2.1",
-        "friendsofphp/php-cs-fixer": "^3.64",
+        "laravel/pint": "^1.29",
         "rector/rector": "^2.0",
         "roave/security-advisories": "dev-latest",
         "k2gl/phpunit-fluent-assertions": "^12"
@@ -34,8 +34,8 @@
     "scripts": {
         "test": "phpunit",
         "phpstan": "phpstan analyse",
-        "cs": "php-cs-fixer fix --dry-run --diff",
-        "cs-fix": "php-cs-fixer fix",
+        "cs": "pint --test",
+        "cs-fix": "pint",
         "check": [
             "@test",
             "@phpstan",

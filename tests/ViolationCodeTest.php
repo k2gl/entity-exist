@@ -7,10 +7,9 @@ namespace K2gl\Component\Validator\Constraint\EntityExist\Test;
 use K2gl\Component\Validator\Constraint\EntityExist\AssertEntityExist;
 use K2gl\Component\Validator\Constraint\EntityExist\AssertEntityNotExist;
 use K2gl\Component\Validator\Constraint\EntityExist\ViolationCode;
+use PHPUnit\Framework\TestCase;
 
 use function K2gl\PHPUnitFluentAssertions\fact;
-
-use PHPUnit\Framework\TestCase;
 
 /**
  * Guards that the readability facade does not drift from the constraint
