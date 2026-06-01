@@ -7,6 +7,9 @@ namespace K2gl\Component\Validator\Constraint\EntityExist\Test;
 use K2gl\Component\Validator\Constraint\EntityExist\AssertEntityExist;
 use K2gl\Component\Validator\Constraint\EntityExist\AssertEntityNotExist;
 use K2gl\Component\Validator\Constraint\EntityExist\ViolationCode;
+
+use function K2gl\PHPUnitFluentAssertions\fact;
+
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -17,11 +20,11 @@ class ViolationCodeTest extends TestCase
 {
     public function testNotExistMatchesAssertEntityExist(): void
     {
-        self::assertSame(AssertEntityExist::NOT_EXIST, ViolationCode::NOT_EXIST);
+        fact(ViolationCode::NOT_EXIST)->is(AssertEntityExist::NOT_EXIST);
     }
 
     public function testAlreadyExistMatchesAssertEntityNotExist(): void
     {
-        self::assertSame(AssertEntityNotExist::EXIST, ViolationCode::ALREADY_EXIST);
+        fact(ViolationCode::ALREADY_EXIST)->is(AssertEntityNotExist::EXIST);
     }
 }

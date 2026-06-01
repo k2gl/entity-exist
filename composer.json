@@ -18,7 +18,8 @@
         "phpstan/phpstan": "^2.1",
         "friendsofphp/php-cs-fixer": "^3.64",
         "rector/rector": "^2.0",
-        "roave/security-advisories": "dev-latest"
+        "roave/security-advisories": "dev-latest",
+        "k2gl/phpunit-fluent-assertions": "^12"
     },
     "autoload": {
         "psr-4": {
