@@ -8,6 +8,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
+use Symfony\Component\Validator\Exception\UnexpectedValueException;
+use Stringable;
 
 final class AssertEntityNotExistValidator extends ConstraintValidator
 {
@@ -21,6 +23,10 @@ final class AssertEntityNotExistValidator extends ConstraintValidator
 
         if (null === $value || '' === $value) {
             return;
+        }
+
+        if (! is_scalar($value) && ! $value instanceof Stringable) {
+            throw new UnexpectedValueException($value, expectedType: 'string');
         }
 
         $data = $this->entityManager->getRepository($constraint->entity)->findOneBy([
