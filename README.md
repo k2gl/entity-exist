@@ -3,7 +3,7 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/k2gl/entity-exist/ci.yml?branch=main&label=CI&logo=github)](https://github.com/k2gl/entity-exist/actions/workflows/ci.yml)
 [![Latest Stable Version](https://img.shields.io/packagist/v/k2gl/entity-exist?logo=packagist&logoColor=white)](https://packagist.org/packages/k2gl/entity-exist)
 [![Total Downloads](https://img.shields.io/packagist/dt/k2gl/entity-exist?logo=packagist&logoColor=white)](https://packagist.org/packages/k2gl/entity-exist)
-[![PHPStan Level](https://img.shields.io/badge/PHPStan-level%206-2a5ea7?logo=php&logoColor=white)](https://phpstan.org)
+[![PHPStan Level](https://img.shields.io/badge/PHPStan-level%209-2a5ea7?logo=php&logoColor=white)](https://phpstan.org)
 [![License](https://img.shields.io/packagist/l/k2gl/entity-exist?color=yellowgreen)](https://packagist.org/packages/k2gl/entity-exist)
 
 ## Requirements
