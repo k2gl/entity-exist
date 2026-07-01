@@ -1,4 +1,4 @@
-# Assert entity exist or not using Symfony constraints and Doctrine.
+# Assert an entity exists (or does not) with a Symfony constraint and Doctrine
 
 [![CI](https://img.shields.io/github/actions/workflow/status/k2gl/entity-exist/ci.yml?branch=main&label=CI&logo=github)](https://github.com/k2gl/entity-exist/actions/workflows/ci.yml)
 [![Latest Stable Version](https://img.shields.io/packagist/v/k2gl/entity-exist?logo=packagist&logoColor=white)](https://packagist.org/packages/k2gl/entity-exist)

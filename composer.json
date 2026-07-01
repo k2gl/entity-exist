@@ -1,6 +1,6 @@
 {
     "name": "k2gl/entity-exist",
-    "description": "Checks if there is at least one row with the required field in the database, for example, a row with the same identifier",
+    "description": "Symfony validation constraint that asserts a matching database row exists (or does not), via Doctrine.",
     "license": "MIT",
     "type": "symfony-bundle",
     "minimum-stability": "stable",
