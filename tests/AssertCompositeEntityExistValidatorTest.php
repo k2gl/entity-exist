@@ -180,10 +180,10 @@ class AssertCompositeEntityExistValidatorTest extends TestCase
     }
 }
 
-readonly class MoveStockOrder
+class MoveStockOrder
 {
     public function __construct(
-        public string $warehouseId,
-        public mixed $companyId,
+        public readonly string $warehouseId,
+        public readonly mixed $companyId,
     ) {}
 }
