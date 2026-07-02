@@ -81,13 +81,46 @@ readonly class TransferUserToOtherUnitOrder
 }
 ```
 
+### AssertCompositeEntityExist
+
+A class-level constraint for when fields must reference an existing row **as a
+combination** — not each field independently. `AssertEntityExist` on
+`warehouseId` and on `companyId` separately would pass as long as each ID
+exists somewhere; it can't tell whether the two belong together.
+
+```php
+use K2gl\Component\Validator\Constraint\EntityExist\AssertCompositeEntityExist;
+
+#[AssertCompositeEntityExist(
+    entity: WarehouseItem::class,
+    fields: ['warehouseId', 'companyId'],
+)]
+readonly class MoveStockOrder
+{
+    public function __construct(
+        public string $warehouseId,
+        public string $companyId,
+        public int $quantity,
+    ) {
+    }
+}
+```
+
+The violation is attached to the first field in `fields` by default; pass
+`errorPath` to attach it elsewhere. Validation is skipped if any of the
+fields is `null` or an empty string, same as the single-field constraints.
+
+Reads the fields directly off the validated object (public properties, as in
+the examples above); no extra service wiring needed — the `services.yaml`
+snippet above already covers it.
+
 ## Violation codes
 
 Each constraint declares the violation code it emits as a UUID constant on its
-own class (`AssertEntityExist::NOT_EXIST`, `AssertEntityNotExist::EXIST`).
-Reading those at the call site can be awkward — especially
-`AssertEntityNotExist::EXIST`, where the class name and the constant negate
-each other.
+own class (`AssertEntityExist::NOT_EXIST`, `AssertEntityNotExist::EXIST`,
+`AssertCompositeEntityExist::NOT_EXIST`). Reading those at the call site can be
+awkward — especially `AssertEntityNotExist::EXIST`, where the class name and
+the constant negate each other.
 
 For nicer reading in error handling and tests, the same codes are also exposed
 under neutral names on `ViolationCode`:

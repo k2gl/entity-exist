@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.15.0
+
+- Add `AssertCompositeEntityExist` — a class-level constraint that checks whether
+  a *combination* of fields references an existing row, rather than each field
+  independently (e.g. a warehouse item ID that must belong to a specific
+  company, not just exist somewhere). Reads the fields directly off the
+  validated object's public properties — no new dependency.
+- `ViolationCode::COMPOSITE_NOT_EXIST` exposes its violation code alongside the
+  existing `NOT_EXIST` and `ALREADY_EXIST`.
+
 ## 1.14.0
 
 - Add `ViolationCode` — a small reference class re-exposing the violation codes

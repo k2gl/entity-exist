@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace K2gl\Component\Validator\Constraint\EntityExist\Test;
 
+use K2gl\Component\Validator\Constraint\EntityExist\AssertCompositeEntityExist;
 use K2gl\Component\Validator\Constraint\EntityExist\AssertEntityExist;
 use K2gl\Component\Validator\Constraint\EntityExist\AssertEntityNotExist;
 use K2gl\Component\Validator\Constraint\EntityExist\ViolationCode;
@@ -25,5 +26,10 @@ class ViolationCodeTest extends TestCase
     public function testAlreadyExistMatchesAssertEntityNotExist(): void
     {
         fact(ViolationCode::ALREADY_EXIST)->is(AssertEntityNotExist::EXIST);
+    }
+
+    public function testCompositeNotExistMatchesAssertCompositeEntityExist(): void
+    {
+        fact(ViolationCode::COMPOSITE_NOT_EXIST)->is(AssertCompositeEntityExist::NOT_EXIST);
     }
 }
