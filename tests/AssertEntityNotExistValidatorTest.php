@@ -17,6 +17,8 @@ use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Violation\ConstraintViolationBuilderInterface;
 
+use function K2gl\PHPUnitFluentAssertions\fact;
+
 class AssertEntityNotExistValidatorTest extends TestCase
 {
     private MockObject $entityManager;
@@ -41,11 +43,9 @@ class AssertEntityNotExistValidatorTest extends TestCase
 
     public function testValidateWithWrongConstraint(): void
     {
-        // assert
-        $this->expectException(UnexpectedTypeException::class);
-
-        // act
-        $this->assertEntityNotExistValidator->validate('foo', new NotNull);
+        // act + assert
+        fact(fn () => $this->assertEntityNotExistValidator->validate('foo', new NotNull))
+            ->throws(UnexpectedTypeException::class);
     }
 
     public function testValidateValidEntity(): void
