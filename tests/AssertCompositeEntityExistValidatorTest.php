@@ -18,6 +18,8 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Exception\UnexpectedValueException;
 use Symfony\Component\Validator\Violation\ConstraintViolationBuilderInterface;
 
+use function K2gl\PHPUnitFluentAssertions\fact;
+
 class AssertCompositeEntityExistValidatorTest extends TestCase
 {
     private MockObject $entityManager;
@@ -42,23 +44,18 @@ class AssertCompositeEntityExistValidatorTest extends TestCase
 
     public function testValidateWithWrongConstraint(): void
     {
-        // assert
-        $this->expectException(UnexpectedTypeException::class);
-
-        // act
-        $this->assertCompositeEntityExistValidator->validate(new class () {}, new NotNull);
+        // act + assert
+        fact(fn () => $this->assertCompositeEntityExistValidator->validate(new class () {}, new NotNull))
+            ->throws(UnexpectedTypeException::class);
     }
 
     public function testValidateWithNonObjectValue(): void
     {
-        // assert
-        $this->expectException(UnexpectedValueException::class);
-
-        // act
-        $this->assertCompositeEntityExistValidator->validate(
+        // act + assert
+        fact(fn () => $this->assertCompositeEntityExistValidator->validate(
             'foo',
             new AssertCompositeEntityExist(entity: 'App\Entity\WarehouseItem', fields: ['warehouseId', 'companyId']),
-        );
+        ))->throws(UnexpectedValueException::class);
     }
 
     public function testValidateSkipsIfValueNull(): void
