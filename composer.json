@@ -1,6 +1,6 @@
 {
     "name": "k2gl/entity-exist",
-    "description": "Symfony validation constraint that asserts a matching database row exists (or does not), via Doctrine.",
+    "description": "Symfony validation constraint that asserts a matching database row exists (or does not), via Doctrine",
     "license": "MIT",
     "type": "symfony-bundle",
     "minimum-stability": "stable",
